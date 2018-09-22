@@ -1,4 +1,4 @@
-package dto
+package hrstypes
 
 import (
 	"strconv"
