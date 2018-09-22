@@ -113,10 +113,3 @@ func (te *TechnicalError) SetError(err error) {
 func (te *TechnicalError) GetError() error {
 	return te.Err
 }
-
-/** General DTOs **/
-
-// MetadataObject interface
-type MetadataObject interface {
-	getObjectInfo() string
-}
