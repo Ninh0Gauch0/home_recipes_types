@@ -5,46 +5,136 @@ import (
 	"strings"
 )
 
-/* Status Definition */
+/**
+** RECIPE DEFINITION
+ */
 
-// Status DTO
-type Status struct {
-	Code        int    `json:"code"`
-	Description string `json:"description"`
+// Recipe DTO
+type Recipe struct {
+	ID          string       `json:"id"`
+	Name        string       `json:"name"`
+	Description string       `json:"description"`
+	Steps       []string     `json:"steps"`
+	Ingredients []Ingredient `json:"ingredients"`
 }
 
-// Interface MetadataObject Implementation
-func (r *Status) getObjectInfo() string {
+// GetID function
+func (r *Recipe) GetID() string {
+	return r.ID
+}
+
+// SetID function
+func (r *Recipe) SetID(id string) {
+	r.ID = id
+}
+
+// GetName function
+func (r *Recipe) GetName() string {
+	return r.Name
+}
+
+// SetName function
+func (r *Recipe) SetName(name string) {
+	r.Name = name
+}
+
+// GetDescription function
+func (r *Recipe) GetDescription() string {
+	return r.Description
+}
+
+// SetDescription function
+func (r *Recipe) SetDescription(description string) {
+	r.Description = description
+}
+
+// GetSteps function
+func (r *Recipe) GetSteps() []string {
+	return r.Steps
+}
+
+// SetSteps function
+func (r *Recipe) SetSteps(steps []string) {
+	r.Steps = steps
+}
+
+// SetIngredients function
+func (r *Recipe) SetIngredients(ingredients []Ingredient) {
+	r.Ingredients = ingredients
+}
+
+// GetIngredients function
+func (r *Recipe) GetIngredients() []Ingredient {
+	return r.Ingredients
+}
+
+// Interface ResponseObject Implementation
+func (r *Recipe) getObjectInfo() string {
 	info := []string{
-		strconv.Itoa(r.Code),
-		r.Description,
+		r.GetName(),
+		r.GetDescription(),
 	}
 	resp := strings.Join(info, ": ")
+
+	for i, step := range r.GetSteps() {
+		resp += "\nStep " + strconv.Itoa(i) + ":" + step
+	}
+
 	return resp
 }
 
-/* HRAResponse Definition */
+/** INGREDIENT DEFINITION **/
 
-// HRAResponse DTO
-type HRAResponse struct {
-	Status  Status         `json:"status"`
-	RespObj MetadataObject `json:"respObj"`
-	Error   HRSError       `json:"error"`
+// Ingredient DTO
+type Ingredient struct {
+	ID          string `json:"id"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Quantity    int    `json:"quantity"`
 }
 
-// SetError function
-func (fe *HRAResponse) SetError(err HRSError) {
-	fe.Error = err
+// Interface ResponseObject Implementations
+func (i *Ingredient) getObjectInfo() string {
+	info := []string{
+		i.Name,
+		i.Description,
+	}
+	resp := strings.Join(info, ": ")
+	quantity := "\nQuantity: " + strconv.Itoa(i.Quantity)
+	resp += quantity
+	return resp
 }
 
-// GetError function
-func (fe *HRAResponse) GetError() HRSError {
-	return fe.Error
+// GetID function
+func (i *Ingredient) GetID() string {
+	return i.ID
 }
 
-/** General DTOs **/
+// SetID function
+func (i *Ingredient) SetID(id string) {
+	i.ID = id
+}
 
-// MetadataObject interface
-type MetadataObject interface {
-	getObjectInfo() string
+func (i *Ingredient) getName() string {
+	return i.Name
+}
+
+func (i *Ingredient) setName(name string) {
+	i.Name = name
+}
+
+func (i *Ingredient) getDescription() string {
+	return i.Description
+}
+
+func (i *Ingredient) setDescription(description string) {
+	i.Description = description
+}
+
+func (i *Ingredient) getQuantity() int {
+	return i.Quantity
+}
+
+func (i *Ingredient) setQuantity(quantity int) {
+	i.Quantity = quantity
 }

@@ -1,4 +1,4 @@
-package types
+package commons
 
 // MetadataObject interface
 type MetadataObject interface {
