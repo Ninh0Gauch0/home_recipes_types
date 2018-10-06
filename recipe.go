@@ -69,7 +69,7 @@ func (r *Recipe) GetIngredients() []Ingredient {
 }
 
 // Interface ResponseObject Implementation
-func (r *Recipe) getObjectInfo() string {
+func (r *Recipe) GetObjectInfo() string {
 	info := []string{
 		r.GetName(),
 		r.GetDescription(),

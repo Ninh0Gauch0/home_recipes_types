@@ -7,7 +7,7 @@ import (
 
 // MetadataObject interface
 type MetadataObject interface {
-	getObjectInfo() string
+	GetObjectInfo() string
 }
 
 /* Status Definition */
@@ -18,8 +18,8 @@ type Status struct {
 	Description string `json:"description"`
 }
 
-// Interface MetadataObject Implementation
-func (r *Status) getObjectInfo() string {
+// GetObjectInfo - Interface MetadataObject Implementation
+func (r *Status) GetObjectInfo() string {
 	info := []string{
 		strconv.Itoa(r.Code),
 		r.Description,

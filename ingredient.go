@@ -15,8 +15,8 @@ type Ingredient struct {
 	Quantity    int    `json:"quantity"`
 }
 
-// Interface ResponseObject Implementations
-func (i *Ingredient) getObjectInfo() string {
+// GetObjectInfo - Interface ResponseObject Implementations
+func (i *Ingredient) GetObjectInfo() string {
 	info := []string{
 		i.Name,
 		i.Description,
