@@ -5,8 +5,8 @@ import (
 	"strings"
 )
 
-// MetadataObject interface
-type MetadataObject interface {
+// DTOObject interface
+type DTOObject interface {
 	GetObjectInfo() string
 }
 
@@ -32,9 +32,9 @@ func (r *Status) GetObjectInfo() string {
 
 // HRAResponse DTO
 type HRAResponse struct {
-	Status  Status         `json:"status"`
-	RespObj MetadataObject `json:"respObj"`
-	Error   HRSError       `json:"error"`
+	Status  Status    `json:"status"`
+	RespObj DTOObject `json:"respObj"`
+	Error   HRSError  `json:"error"`
 }
 
 // SetError function
