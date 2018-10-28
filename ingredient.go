@@ -15,7 +15,7 @@ type Ingredient struct {
 	Quantity    int    `json:"quantity"`
 }
 
-// GetObjectInfo - Interface ResponseObject Implementations
+// GetObjectInfo - Interface DTOObject Implementations
 func (i *Ingredient) GetObjectInfo() string {
 	info := []string{
 		i.Name,
@@ -37,26 +37,32 @@ func (i *Ingredient) SetID(id string) {
 	i.ID = id
 }
 
-func (i *Ingredient) getName() string {
+// GetName function
+func (i *Ingredient) GetName() string {
 	return i.Name
 }
 
-func (i *Ingredient) setName(name string) {
+// SetName function
+func (i *Ingredient) SetName(name string) {
 	i.Name = name
 }
 
-func (i *Ingredient) getDescription() string {
+// GetDescription function
+func (i *Ingredient) GetDescription() string {
 	return i.Description
 }
 
-func (i *Ingredient) setDescription(description string) {
+// SetDescription function
+func (i *Ingredient) SetDescription(description string) {
 	i.Description = description
 }
 
-func (i *Ingredient) getQuantity() int {
+// GetQuantity function
+func (i *Ingredient) GetQuantity() int {
 	return i.Quantity
 }
 
-func (i *Ingredient) setQuantity(quantity int) {
+// SetQuantity function
+func (i *Ingredient) SetQuantity(quantity int) {
 	i.Quantity = quantity
 }

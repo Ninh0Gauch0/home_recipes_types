@@ -18,7 +18,7 @@ type Status struct {
 	Description string `json:"description"`
 }
 
-// GetObjectInfo - Interface MetadataObject Implementation
+// GetObjectInfo - Interface DTOObject Implementation
 func (r *Status) GetObjectInfo() string {
 	info := []string{
 		strconv.Itoa(r.Code),

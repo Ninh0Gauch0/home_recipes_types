@@ -62,7 +62,7 @@ type TechnicalError struct {
 
 // ShowError - Shows
 func (te *TechnicalError) ShowError() string {
-	return fmt.Sprintf("[ERROR] A functional error occured: %v", te.Err)
+	return fmt.Sprintf("[ERROR] A technical error occured: %v", te.Err)
 }
 
 // SetError function

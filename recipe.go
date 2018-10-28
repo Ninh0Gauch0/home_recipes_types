@@ -68,7 +68,7 @@ func (r *Recipe) GetIngredients() []Ingredient {
 	return r.Ingredients
 }
 
-// Interface ResponseObject Implementation
+// GetObjectInfo - Interface DTOObject Implementation
 func (r *Recipe) GetObjectInfo() string {
 	info := []string{
 		r.GetName(),
