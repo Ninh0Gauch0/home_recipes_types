@@ -11,11 +11,11 @@ import (
 
 // Recipe DTO
 type Recipe struct {
-	ID          string       `json:"id"`
-	Name        string       `json:"name"`
-	Description string       `json:"description"`
-	Steps       []string     `json:"steps"`
-	Ingredients []Ingredient `json:"ingredients"`
+	ID          string   `json:"id"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Steps       []string `json:"steps"`
+	Ingredients []string `json:"ingredients"`
 }
 
 // GetID function
@@ -59,12 +59,12 @@ func (r *Recipe) SetSteps(steps []string) {
 }
 
 // SetIngredients function
-func (r *Recipe) SetIngredients(ingredients []Ingredient) {
+func (r *Recipe) SetIngredients(ingredients []string) {
 	r.Ingredients = ingredients
 }
 
 // GetIngredients function
-func (r *Recipe) GetIngredients() []Ingredient {
+func (r *Recipe) GetIngredients() []string {
 	return r.Ingredients
 }
 
