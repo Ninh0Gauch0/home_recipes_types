@@ -13,21 +13,21 @@ type HRSError interface {
 
 // FatalError Error
 type FatalError struct {
-	Err error
+	Err string
 }
 
 // ShowError - Shows
 func (fte *FatalError) ShowError() string {
-	return fmt.Sprintf("[ERROR] A fatal error occured: %v", fte.Err)
+	return fmt.Sprintf("A fatal error occured: %s", fte.Err)
 }
 
 // SetError function
-func (fte *FatalError) SetError(err error) {
+func (fte *FatalError) SetError(err string) {
 	fte.Err = err
 }
 
 // GetError function
-func (fte *FatalError) GetError() error {
+func (fte *FatalError) GetError() string {
 	return fte.Err
 }
 
@@ -35,21 +35,21 @@ func (fte *FatalError) GetError() error {
 
 // FunctionalError Error
 type FunctionalError struct {
-	Err error
+	Err string
 }
 
 // ShowError - Shows
 func (fe *FunctionalError) ShowError() string {
-	return fmt.Sprintf("[ERROR] A functional error occured: %v", fe.Err)
+	return fmt.Sprintf("A functional error occured: %s", fe.Err)
 }
 
 // SetError function
-func (fe *FunctionalError) SetError(err error) {
+func (fe *FunctionalError) SetError(err string) {
 	fe.Err = err
 }
 
 // GetError function
-func (fe *FunctionalError) GetError() error {
+func (fe *FunctionalError) GetError() string {
 	return fe.Err
 }
 
@@ -57,20 +57,20 @@ func (fe *FunctionalError) GetError() error {
 
 // TechnicalError - Struct
 type TechnicalError struct {
-	Err error
+	Err string
 }
 
 // ShowError - Shows
 func (te *TechnicalError) ShowError() string {
-	return fmt.Sprintf("[ERROR] A technical error occured: %v", te.Err)
+	return fmt.Sprintf("A technical error occured: %s", te.Err)
 }
 
 // SetError function
-func (te *TechnicalError) SetError(err error) {
+func (te *TechnicalError) SetError(err string) {
 	te.Err = err
 }
 
 // GetError function
-func (te *TechnicalError) GetError() error {
+func (te *TechnicalError) GetError() string {
 	return te.Err
 }
