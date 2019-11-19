@@ -5,8 +5,8 @@ import (
 	"strings"
 )
 
-// DTOObject interface
-type DTOObject interface {
+// MetadataObject interface
+type MetadataObject interface {
 	GetObjectInfo() string
 }
 
@@ -18,7 +18,7 @@ type Status struct {
 	Description string `json:"description"`
 }
 
-// GetObjectInfo - Interface DTOObject Implementation
+// GetObjectInfo - Interface MetadataObject Implementation
 func (r *Status) GetObjectInfo() string {
 	info := []string{
 		strconv.Itoa(r.Code),
@@ -32,9 +32,9 @@ func (r *Status) GetObjectInfo() string {
 
 // HRAResponse DTO
 type HRAResponse struct {
-	Status  Status    `json:"status"`
-	RespObj DTOObject `json:"respObj"`
-	Error   HRSError  `json:"error"`
+	Status  Status         `json:"status"`
+	RespObj MetadataObject `json:"respObj"`
+	Error   HRSError       `json:"error"`
 }
 
 // SetError function

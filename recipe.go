@@ -11,21 +11,21 @@ import (
 
 // Recipe DTO
 type Recipe struct {
-	ID          string   `json:"id"`
-	Name        string   `json:"name"`
-	Description string   `json:"description"`
-	Steps       []string `json:"steps"`
-	Ingredients []string `json:"ingredients"`
+	Code        string   `json:"code" bson:"_id,omitempty"`
+	Name        string   `json:"name" bson:"name,omitempty"`
+	Description string   `json:"description" bson:"description,omitempty"`
+	Steps       []string `json:"steps" bson:"steps,omitempty"`
+	Ingredients []string `json:"ingredients" bson:"ingredients,omitempty"`
 }
 
-// GetID function
-func (r *Recipe) GetID() string {
-	return r.ID
+// GetCode function
+func (r *Recipe) GetCode() string {
+	return r.Code
 }
 
-// SetID function
-func (r *Recipe) SetID(id string) {
-	r.ID = id
+// SetCode function
+func (r *Recipe) SetCode(code string) {
+	r.Code = code
 }
 
 // GetName function

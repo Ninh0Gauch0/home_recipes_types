@@ -9,10 +9,10 @@ import (
 
 // Ingredient DTO
 type Ingredient struct {
-	ID          string `json:"id"`
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Quantity    int    `json:"quantity"`
+	Code        string `json:"code" bson:"_id"`
+	Name        string `json:"name" bson:"name"`
+	Description string `json:"description" bson:"description"`
+	Quantity    int    `json:"quantity" bson:"quantity"`
 }
 
 // GetObjectInfo - Interface DTOObject Implementations
@@ -27,14 +27,14 @@ func (i *Ingredient) GetObjectInfo() string {
 	return resp
 }
 
-// GetID function
-func (i *Ingredient) GetID() string {
-	return i.ID
+// GetCode function
+func (i *Ingredient) GetCode() string {
+	return i.Code
 }
 
-// SetID function
-func (i *Ingredient) SetID(id string) {
-	i.ID = id
+// SetCode function
+func (i *Ingredient) SetCode(code string) {
+	i.Code = code
 }
 
 // GetName function
